@@ -70,7 +70,7 @@ rspec spec
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/lilyfrancis/blog-app/issues).
+Feel free to check the [issues page](https://github.com/lilyfrancis/blogapp/issues).
 
 ## Show your support
 

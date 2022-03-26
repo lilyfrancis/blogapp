@@ -2,49 +2,34 @@ require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
   describe 'GET /index' do
-    before(:example) { get(users_path) }
-    it 'check status' do
+    before(:each) { get users_path }
+
+    it 'is a success' do
       expect(response).to have_http_status(:ok)
     end
 
-    it 'renders correct template' do
-      expect(response).to render_template('index')
+    it 'render a specfic template' do
+      expect(response).to render_template('users/index')
     end
 
-    it 'renders correct template' do
-      expect(response).to_not render_template('show')
-    end
-
-    it 'check for placeholder text' do
-      expect(response.body).to include('Users#index')
-    end
-
-    it 'check for placeholder text' do
-      expect(response.body).to include('Users#index')
+    it 'test placeholder inside template' do
+      expect(response.body).to include('show all users')
     end
   end
 
   describe 'GET /show' do
-    before(:example) { get('/users/365') }
+    before(:each) { get user_path(10) }
 
-    it 'check status' do
+    it 'is a success' do
       expect(response).to have_http_status(:ok)
     end
 
-    it 'renders correct template' do
-      expect(response.body).to render_template('show')
+    it 'render a specfic template' do
+      expect(response).to render_template('users/show')
     end
 
-    it 'renders correct template' do
-      expect(response).to_not render_template('index')
-    end
-
-    it 'check for placeholder text' do
-      expect(response.body).to include('Users#show')
-    end
-
-    it 'check for placeholder text' do
-      expect(response.body).to include('Users#show')
+    it 'Test placeholder inside template' do
+      expect(response.body).to include('show user info')
     end
   end
 end
