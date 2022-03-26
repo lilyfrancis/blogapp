@@ -1,4 +1,4 @@
-# blog-app
+# blogapp
 
 The is a Blog a blog website. It's a functional website that shows the list of posts and empower readers to interact with them by adding comments and liking posts.
 
@@ -10,7 +10,7 @@ The is a Blog a blog website. It's a functional website that shows the list of p
 
 To get a local copy up and running follow these simple example steps.
 
-git clone https://github.com/lilyfrancis/blog-app.git
+git clone https://github.com/lilyfrancis/blogapp.git
 
 cd Trending-Blog-app
 
