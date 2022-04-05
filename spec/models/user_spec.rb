@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  user = User.new(name: 'paka', bio: 'I am a Full-stack developer', posts_counter: 0, photo: 'https://thumbs.dreamstime.com/z/happy-man-jumping-joy-peak-mountain-sunset-success-cliff-winner-happiness-42811168.jpg')
+  user = User.new(name: 'Donard', bio: 'I am a Full-stack developer', posts_counter: 0, photo: 'https://avatars.githubusercontent.com/u/74506933?v=4')
 
   before(:each) { user.save }
 

@@ -1,47 +1,51 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  describe 'Validaiton for post' do
-    subject do
-      lily = User.new(name: 'Henry Kc', photo: 'profile.png',
-                      bio: 'I am coming out to be the best computer programmer', posts_counter: 0)
-      Post.new(title: 'My best friend', text: 'Will soon be revealed',
-               comments_counter: 3, likes_counter: 3, author_id: lily.id)
-    end
+  user = User.new(name: 'Donard', bio: 'I am a Full-stack developer', posts_counter: 0, photo: 'https://avatars.githubusercontent.com/u/74506933?v=4')
+  post = Post.new(title: 'Post 1', text: 'Text...', comments_counter: 0, likes_counter: 0, author_id: user.id)
 
-    before { subject.save }
+  before(:each) { post.save }
 
-    it 'Should have title present' do
-      subject.title = nil
-      expect(subject).to_not be_valid
-    end
-
-    it 'Should have title not being too long' do
-      subject.title = 'one' * 200
-      expect(subject).to_not be_valid
-    end
-
-    it 'Should have comments counter as an integer' do
-      subject.comments_counter = 0.033
-      expect(subject).to_not be_valid
-    end
-
-    it 'Should have comments counter not be less than zero' do
-      subject.comments_counter = -1
-      expect(subject).to_not be_valid
-    end
-
-    it 'Should have likes counter not be less than zero' do
-      subject.likes_counter = -1
-      expect(subject).to_not be_valid
-    end
+  it 'validates the presence of the title' do
+    post.title = nil
+    expect(post).to_not be_valid
   end
 
-  describe 'Test for last recent posts' do
-    subject { User.new(name: 'Lily Fr', photo: 'profile.png', bio: 'Lily the best', posts_counter: 0) }
-    before { subject.save }
-    it 'Should have maximum of five comments' do
-      expect(subject.last_recent_posts).to eq(subject.last_recent_posts)
+  it 'validates the presence of the text' do
+    post.text = nil
+    expect(post).to_not be_valid
+  end
+
+  it 'validates the presence of the comments_counter' do
+    post.comments_counter = nil
+    expect(post).to_not be_valid
+  end
+
+  it 'validates the numericality of the comments_counter' do
+    post.comments_counter = 'This is really good post!'
+    expect(post).to_not be_valid
+  end
+
+  it 'validates the presence of the likes_counter' do
+    post.likes_counter = nil
+    expect(post).to_not be_valid
+  end
+
+  it 'validates the numericality of the likes_counter' do
+    post.likes_counter = '1'
+    expect(post).to_not be_valid
+  end
+
+  it 'validates the presence of the author_id' do
+    post.author_id = nil
+    expect(post).to_not be_valid
+  end
+
+  describe '#recent_comments' do
+    before(:each) { 5.times { |i| Comment.new(text: "Comment #{i}", post_id: post.id) } }
+
+    it 'returns the last 3 comments' do
+      expect(post.recent_comments).to eq(Comment.order(created_at: :desc).limit(3))
     end
   end
 end
