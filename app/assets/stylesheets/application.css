@@ -16,7 +16,7 @@
 
 a {
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: black;
 }
 
 .user-body {
@@ -25,7 +25,7 @@ a {
 }
 
 .user-title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,9 +38,9 @@ a {
 }
 
 .user-img {
-  max-height: 120px;
+  max-height: 200px;
   object-fit: fill;
-  width: 80%;
+  width: 100%;
 }
 
 .bio {
@@ -65,4 +65,9 @@ a {
 
 .post-description {
   font-size: 1.5rem;
+}
+
+.form {
+  width: 70%;
+  margin: auto;
 }
