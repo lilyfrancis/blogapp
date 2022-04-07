@@ -57,7 +57,7 @@ run the test with:
 rspec spec
 ```
 
-## Author
+## Authors
 
 👤 **Lilian Francis**
 
@@ -65,6 +65,11 @@ rspec spec
 - Twitter: [@ifnotlily](https://twitter.com/ifnotlily)
 - LinkdIn : [@lilianfrancis](https://www.linkedin.com/in/lilianfrancis/)
 
+👤 **Amadu Kamara**
+
+- Github : [@AmaduKamara](https://github.com/AmaduKamara)
+- Twitter: [@DevAmkam](https://twitter.com/DevAmkam)
+- LinkdIn : [@amadu-kamara](https://www.linkedin.com/in/amadu-kamara-3b60a25b/)
 
 ## 🤝 Contributing
 
