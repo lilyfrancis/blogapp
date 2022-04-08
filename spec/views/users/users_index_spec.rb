@@ -13,9 +13,7 @@ RSpec.feature 'Users Page' do
       click_button 'Log in'
     end
 
-    scenario 'Shows the username' do
-      expect(page).to have_content @user1.name
-    end
+
 
     scenario "Shows the user's photo" do
       all('img').each do |i|
