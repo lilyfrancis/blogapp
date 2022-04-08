@@ -69,7 +69,7 @@ rspec spec
 
 - Github : [@AmaduKamara](https://github.com/AmaduKamara)
 - Twitter: [@DevAmkam](https://twitter.com/DevAmkam)
-- LinkdIn : [@amadu-kamara](https://www.linkedin.com/in/amadu-kamara-3b60a25b/)
+- LinkdIn : [@amadu-kamara-3b60a25b](https://www.linkedin.com/in/amadu-kamara-3b60a25b/)
 
 ## 🤝 Contributing
 
